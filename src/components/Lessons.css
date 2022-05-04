@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400;500;700&display=swap");
+.lessons {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+}
+.header {
+  width: 100%;
+  padding-top: 55px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  font-size: 48px;
+  font-family: "Roboto", sans-serif;
+  color: var(--primarycolor);
+  line-height: 58px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 38px;
+}
+.line {
+  width: 835px;
+  height: 0px;
+  border: 3px solid var(--secondarycolor);
+  border-radius: 30px;
+  margin-bottom: 38px;
+}
+.lecon-input {
+  position: relative;
+  width: 500px;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 18px;
+  color: var(--primarycolor);
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  border-radius: 30px;
+  line-height: 22px;
+  border: 1px solid var(--primarycolor);
+  background-color: var(--thirdcolor);
+  margin-bottom: 49px;
+}
+.courses {
+  width: 100%;
+  display: flex;
+  padding: 0 138px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.course {
+  width: 400px;
+  height: 140px;
+  background-color: var(--fifthcolor);
+  margin: 0 20px 25px;
+}
+.course-info {
+  margin-top: 49px;
+  padding-left: 28px;
+}
+.course-title {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 22px;
+}
+.course-level {
+  color: var(--secondarycolor);
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+@media only screen and (max-width: 978px) {
+  .title {
+    font-size: 36px;
+    line-height: 43px;
+  }
+  .line {
+    width: 330px;
+  }
+  .courses {
+    padding: 0 80px;
+  }
+  .course {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .lecon-input {
+    width: 400px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 578px) {
+  .lecon-input {
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .courses {
+    padding: 0 38px;
+  }
+  .course {
+    width: 300px;
+    height: 105px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .course-info {
+    margin-top: 35px;
+    text-align: center;
+    padding-left: 0;
+  }
+  .course-title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 22px;
+    letter-spacing: 0.1em;
+  }
+  .course-level {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .line {
+    width: 273px;
+  }
+}

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.navbar {
+  height: 80px;
+  width: 100%;
+  padding: 0 138px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 9px;
+}
+.logo-text {
+  font-family: "Roboto", sans-serif;
+  color: var(--primarycolor);
+  font-weight: 700;
+  line-height: 29px;
+  font-size: 24px;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+.links {
+  display: flex;
+  align-items: center;
+}
+.link {
+  position: relative;
+  text-decoration: inherit;
+  cursor: pointer;
+  margin-left: 58px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primarycolor);
+}
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -4px;
+  left: 0px;
+  background-color: var(--secondarycolor);
+  transition: 0.25s;
+}
+.link:hover::after {
+  width: 100%;
+}
+.link:focus {
+  color: var(--secondarycolor);
+}
+.link.active {
+  color: var(--secondarycolor);
+}
+.menu-icon {
+  display: none;
+}
+@media only screen and (max-width: 978px) {
+  .link {
+    font-size: 16px;
+    margin-left: 38px;
+  }
+  .navbar {
+    padding: 0 80px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f9f9f9;
+    z-index: 100;
+    opacity: 1;
+    transform: translateX(-100%);
+    transition: 0.5s;
+  }
+  .links.show {
+    transform: translateX(0%);
+  }
+  .link {
+    font-size: 24px;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .navbar {
+    padding: 0 37px;
+  }
+}

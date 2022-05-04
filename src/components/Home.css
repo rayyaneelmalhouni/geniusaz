@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+
+.home {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  overflow: hidden;
+}
+.main {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  top: 203px;
+}
+.title {
+  color: var(--secondarycolor);
+  font-size: 72px;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+  line-height: 86px;
+}
+.sub-title {
+  color: var(--primarycolor);
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 29px;
+  margin-bottom: 38px;
+}
+.start-btn {
+  width: 240px;
+  height: 60px;
+  border: none;
+  background-color: var(--secondarycolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 30px;
+  border: none;
+  transition: 0.25s;
+}
+.start-btn .anchor {
+  line-height: 29px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: inherit;
+  transition: 0.25s;
+}
+.start-btn:hover {
+  background-color: var(--thirdcolor);
+
+  border: 1px solid var(--secondarycolor);
+}
+.start-btn:hover .anchor {
+  color: var(--secondarycolor);
+}
+.copyright {
+  position: absolute;
+  bottom: 12px;
+  left: 139px;
+  font-family: "Roboto", sans-serif;
+  color: var(--fourthcolor);
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+@media only screen and (max-width: 978px) {
+  .title {
+    font-size: 64px;
+    line-height: 77px;
+    margin-bottom: 12px;
+  }
+  .sub-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .navbar {
+    padding: 0 80px;
+  }
+  .copyright {
+    font-size: 14px;
+    left: 81px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .navbar {
+    padding: 0 38px;
+  }
+  .copyright {
+    font-size: 12px;
+    left: 37px;
+    line-height: 13px;
+  }
+  .title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+  .sub-title {
+    width: 280px;
+    text-align: center;
+  }
+  .start-btn {
+    width: 160px;
+    height: 40px;
+  }
+  .start-btn .anchor {
+    font-size: 16px;
+  }
+}
