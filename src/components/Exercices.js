@@ -1,19 +1,20 @@
-import "./Exercices.css";
-import { Link } from "react-router-dom";
+import "./main.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-function Lessons() {
-  const exercices = [
-    {
-      name: "Théorème de Pythagore",
-      link: "https://drive.google.com/file/d/1F1XXeMqJhY7Sf64NxteZ5sugGSApiBHN/view?usp=sharing",
-      level: "3 A.S.C.",
-      images: {
-        big: "/bexercice.png",
-        medium: "/mexercice.png",
-        small: "/sexercice.png",
-      },
-    },
-  ];
+function Exercices() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:8001/api/exercices");
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, []);
   return (
     <div className="lessons">
       <div className="header">
@@ -22,9 +23,15 @@ function Lessons() {
         <input placeholder="Cherche..." className="lecon-input"></input>
       </div>
       <div className="courses">
-        {exercices.map((exercice, id) => {
+        {data.map((exercice) => {
           return (
-            <a href={exercice.link} className="course" key={id} target="_blank">
+            <a
+              href={exercice.link}
+              className="course"
+              key={exercice._id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="course-info">
                 <h3 className="course-title">{exercice.name}</h3>
                 <h4 className="course-level">{exercice.level}</h4>
@@ -37,4 +44,4 @@ function Lessons() {
   );
 }
 
-export default Lessons;
+export default Exercices;

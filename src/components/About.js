@@ -2,6 +2,7 @@ import "./About.css";
 import { Link } from "react-router-dom";
 
 function Lessons() {
+  const name = window.location.hostname;
   return (
     <div className="lessons">
       <div className="header">
@@ -14,7 +15,7 @@ function Lessons() {
           sans aucun problème, offrant des leçons gratuite pour tout public.
           Nous offrant aussi des séries d'éxercices qui peuvent vous aidez.Vous
           pouvez accédez à touts ses offres à partir du siteweb{" "}
-          <Link to="/">GeniusAZ.com</Link> .
+          <Link to="/">{name}</Link> .
         </p>
       </div>
     </div>
