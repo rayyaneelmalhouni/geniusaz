@@ -4,10 +4,14 @@ import { useState, useEffect } from "react";
 
 function Exercices() {
   const [data, setData] = useState([]);
+  const [globalData, setGlobalData] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:8001/api/exercices");
+        const response = await axios.get(
+          "https://geniusaz.herokuapp.com/api/exercices"
+        );
+        setGlobalData(response.data);
         setData(response.data);
       } catch (error) {
         console.log(error);
@@ -15,12 +19,24 @@ function Exercices() {
     }
     fetchData();
   }, []);
+  const search = (e) => {
+    const value = e.target.value;
+    const ndata = globalData.filter((exercice) => {
+      const name = exercice.name.toLowerCase();
+      return name.startsWith(value.toLowerCase());
+    });
+    setData(ndata);
+  };
   return (
     <div className="lessons">
       <div className="header">
         <h1 className="title">EXERCICES</h1>
         <div className="line"></div>
-        <input placeholder="Cherche..." className="lecon-input"></input>
+        <input
+          placeholder="Cherche..."
+          className="lecon-input"
+          onChange={search}
+        ></input>
       </div>
       <div className="courses">
         {data.map((exercice) => {
