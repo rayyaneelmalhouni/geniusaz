@@ -55,6 +55,8 @@
   height: 140px;
   background-color: var(--fifthcolor);
   margin: 0 20px 25px;
+  color: var(--primarycolor);
+  text-decoration: inherit;
 }
 .course-info {
   margin-top: 49px;
